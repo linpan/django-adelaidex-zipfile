@@ -25,3 +25,21 @@ List view example::
         zip_filename = 'list.zip'          # optional, default download.zip
         model = Model
 
+Tests
+-----
+
+To run the tests::
+
+    virtualenv .virtualenv
+    source .virtualenv/bin/activate
+    pip install --extra-index-url=http://lti-adx.adelaide.edu.au/pypi/ -U -r django_adelaidex/zipfile/tests/pip.txt 
+    python manage.py test
+
+
+Build
+-----
+
+To build the pip package::
+
+    python setup.py 
+
