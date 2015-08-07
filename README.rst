@@ -28,13 +28,32 @@ List view example::
 Tests
 -----
 
-To run the tests::
+To set up the virtualenv::
 
     virtualenv .virtualenv
     source .virtualenv/bin/activate
     pip install --extra-index-url=http://lti-adx.adelaide.edu.au/pypi/ -U -r django_adelaidex/zipfile/tests/pip.txt 
+
+To run the tests::
+
     python manage.py test
 
+To check coverage::
+
+    coverage run --include=django_adelaidex/*  python manage.py test     
+    coverage report
+
+    Name                                           Stmts   Miss  Cover
+    ------------------------------------------------------------------
+    django_adelaidex/__init__                          0      0   100%
+    django_adelaidex/zipfile/__init__                  0      0   100%
+    django_adelaidex/zipfile/mixins                   26      0   100%
+    django_adelaidex/zipfile/response                 17      0   100%
+    django_adelaidex/zipfile/tests/__init__            0      0   100%
+    django_adelaidex/zipfile/tests/settings           10      0   100%
+    django_adelaidex/zipfile/tests/test_response     100      0   100%
+    ------------------------------------------------------------------
+    TOTAL                                            153      0   100%
 
 Build
 -----
